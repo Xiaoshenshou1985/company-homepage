@@ -1,0 +1,118 @@
+---
+const subsidiaries = [
+  {
+    name: '武汉百杰科技',
+    fullName: '武汉百杰科技有限公司',
+    ownership: '100%',
+    location: '武汉',
+    desc: '聚焦区块链技术、芯片设计与储能技术，打造硬核科技产品',
+    tags: ['区块链', '芯片设计', '储能技术'],
+    color: 'from-blue-500/10 to-cyan-500/10',
+    iconColor: 'text-blue-400',
+  },
+  {
+    name: '苏州奥斯帆科技',
+    fullName: '苏州奥斯帆科技有限公司',
+    ownership: '100%',
+    location: '苏州',
+    desc: '提供专业技术服务、软件开发与芯片设计解决方案',
+    tags: ['技术服务', '软件开发', '芯片设计'],
+    color: 'from-purple-500/10 to-violet-500/10',
+    iconColor: 'text-purple-400',
+  },
+  {
+    name: '杭州巨嘉吉贸易',
+    fullName: '杭州巨嘉吉贸易有限公司',
+    ownership: '100%',
+    location: '杭州',
+    desc: '深耕大宗商品贸易与供应链管理，构建高效贸易生态',
+    tags: ['大宗商品', '供应链管理'],
+    color: 'from-emerald-500/10 to-teal-500/10',
+    iconColor: 'text-emerald-400',
+  },
+  {
+    name: '苏州金许知科技',
+    fullName: '苏州金许知科技有限公司',
+    ownership: '100%',
+    location: '苏州',
+    desc: '专注软件开发与电子元器件领域，提供优质技术产品',
+    tags: ['软件开发', '电子元器件'],
+    color: 'from-cyan-500/10 to-sky-500/10',
+    iconColor: 'text-cyan-400',
+  },
+  {
+    name: '宏安兴宸新材料',
+    fullName: '宏安兴宸新材料有限公司',
+    ownership: '10%',
+    location: '—',
+    desc: '战略投资布局电子材料领域，拓展新材料产业链',
+    tags: ['电子材料', '战略投资'],
+    color: 'from-amber-500/10 to-orange-500/10',
+    iconColor: 'text-amber-400',
+  },
+  {
+    name: '中旺众邦工程机械',
+    fullName: '中旺众邦工程机械有限公司',
+    ownership: '1%',
+    location: '—',
+    desc: '参股增材制造领域，探索先进制造技术新方向',
+    tags: ['增材制造', '先进制造'],
+    color: 'from-rose-500/10 to-pink-500/10',
+    iconColor: 'text-rose-400',
+  },
+];
+---
+
+<section id="subsidiaries" class="py-24 md:py-32 bg-navy-900/50 relative">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Section header -->
+    <div class="text-center mb-16 scroll-reveal">
+      <span class="text-gold-400 text-sm tracking-widest uppercase mb-4 block">SUBSIDIARIES</span>
+      <h2 class="text-3xl md:text-5xl font-bold mb-6">旗下公司</h2>
+      <div class="w-20 h-1 bg-gradient-to-r from-gold-400 to-gold-600 mx-auto rounded-full"></div>
+      <p class="text-white/50 mt-6 max-w-2xl mx-auto">6家子公司覆盖科技、贸易、投资三大板块，形成产业协同矩阵</p>
+    </div>
+
+    <!-- Subsidiary cards -->
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      {subsidiaries.map((sub, i) => (
+        <div class="scroll-reveal group p-6 rounded-2xl bg-white/[0.02] border border-white/[0.06] hover:border-gold-500/20 transition-all duration-300 hover:-translate-y-1">
+          <!-- Header -->
+          <div class="flex items-start justify-between mb-4">
+            <div class={`w-12 h-12 rounded-xl bg-gradient-to-br ${sub.color} flex items-center justify-center ${sub.iconColor} group-hover:scale-110 transition-transform duration-300`}>
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+              </svg>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class={`px-2.5 py-1 rounded-full text-xs font-medium ${sub.ownership === '100%' ? 'bg-gold-500/10 text-gold-400 border border-gold-500/20' : 'bg-white/[0.04] text-white/40 border border-white/[0.06]'}`}>
+                {sub.ownership}控股
+              </span>
+              {sub.location !== '—' && (
+                <span class="px-2.5 py-1 rounded-full text-xs bg-white/[0.04] text-white/40 border border-white/[0.06]">
+                  {sub.location}
+                </span>
+              )}
+            </div>
+          </div>
+
+          <!-- Name -->
+          <h3 class="text-lg font-bold mb-1 text-white group-hover:text-gold-400 transition-colors">{sub.name}</h3>
+          <p class="text-white/30 text-xs mb-3">{sub.fullName}</p>
+
+          <!-- Description -->
+          <p class="text-white/50 text-sm leading-relaxed mb-4">{sub.desc}</p>
+
+          <!-- Tags -->
+          <div class="flex flex-wrap gap-2">
+            {sub.tags.map((tag) => (
+              <span class="px-2.5 py-0.5 rounded-full text-xs text-white/40 bg-white/[0.04] border border-white/[0.06]">
+                {tag}
+              </span>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

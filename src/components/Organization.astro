@@ -1,0 +1,114 @@
+---
+const shareholders = [
+  {
+    name: '梁旭',
+    pct: '90%',
+    role: '董事长',
+    bg: 'from-gold-500/20 to-amber-500/20',
+    border: 'border-gold-500/30',
+    career: [
+      'IBM 中国',
+      '瑞银集团（香港）',
+      '深蓝投资',
+      '银石投资',
+      '大有开金',
+      '宏邦集团',
+    ],
+  },
+  {
+    name: '曹放',
+    pct: '10%',
+    role: '董事',
+    bg: 'from-blue-500/20 to-cyan-500/20',
+    border: 'border-blue-500/30',
+    career: [
+      '北京邮电大学',
+      '中国移动（9年）',
+      '北京国际信托',
+      '宏邦集团',
+    ],
+  },
+];
+
+const subsidiaries = [
+  { name: '武汉百杰科技', pct: '100%', short: '百杰' },
+  { name: '苏州奥斯帆科技', pct: '100%', short: '奥斯帆' },
+  { name: '杭州巨嘉吉贸易', pct: '100%', short: '巨嘉吉' },
+  { name: '苏州金许知科技', pct: '100%', short: '金许知' },
+  { name: '宏安兴宸新材料', pct: '10%', short: '宏安兴宸' },
+  { name: '中旺众邦工程机械', pct: '1%', short: '中旺众邦' },
+];
+---
+
+<section id="org" class="py-24 md:py-32 bg-navy-950 relative">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Section header -->
+    <div class="text-center mb-16 scroll-reveal">
+      <span class="text-gold-400 text-sm tracking-widest uppercase mb-4 block">ORGANIZATION</span>
+      <h2 class="text-3xl md:text-5xl font-bold mb-6">组织架构</h2>
+      <div class="w-20 h-1 bg-gradient-to-r from-gold-400 to-gold-600 mx-auto rounded-full"></div>
+    </div>
+
+    <!-- Org chart -->
+    <div class="scroll-reveal max-w-5xl mx-auto">
+      <!-- Top: Hongbang Group -->
+      <div class="text-center mb-8">
+        <div class="inline-block px-8 py-4 rounded-xl bg-gradient-to-r from-gold-500/10 to-amber-500/10 border border-gold-500/30">
+          <div class="text-gold-400 font-bold text-xl">宏邦集团</div>
+          <div class="text-white/40 text-xs mt-1">湖北宏邦商务服务有限公司</div>
+        </div>
+      </div>
+
+      <!-- Connector line down -->
+      <div class="flex justify-center mb-2">
+        <div class="w-px h-8 bg-white/10"></div>
+      </div>
+
+      <!-- Shareholders row -->
+      <div class="flex justify-center gap-8 md:gap-16 mb-8">
+        {shareholders.map((s) => (
+          <div class="text-center">
+            <div class={`px-6 py-4 rounded-xl bg-gradient-to-br ${s.bg} border ${s.border} mb-3`}>
+              <div class="text-white font-bold text-lg">{s.name}</div>
+              <div class="flex items-center justify-center gap-2 mt-1">
+                <span class="text-gold-400 font-bold text-sm">{s.pct}</span>
+                <span class="text-white/40 text-xs">|</span>
+                <span class="text-white/50 text-xs">{s.role}</span>
+              </div>
+            </div>
+            <!-- Career path -->
+            <div class="text-left max-w-[200px] mx-auto">
+              {s.career.map((c, ci) => (
+                <div class="flex items-center gap-2 mb-1">
+                  <div class={`w-1.5 h-1.5 rounded-full flex-shrink-0 ${ci === s.career.length - 1 ? 'bg-gold-400' : 'bg-white/20'}`}></div>
+                  <span class={`text-xs ${ci === s.career.length - 1 ? 'text-gold-400' : 'text-white/30'}`}>{c}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <!-- Connector -->
+      <div class="flex justify-center mb-2">
+        <div class="w-px h-6 bg-white/10"></div>
+      </div>
+      <div class="flex justify-center mb-2">
+        <div class="w-3/4 max-w-2xl h-px bg-white/10"></div>
+      </div>
+
+      <!-- Subsidiaries grid -->
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 mt-6">
+        {subsidiaries.map((sub) => (
+          <div class="text-center group">
+            <div class="px-3 py-3 rounded-lg bg-white/[0.02] border border-white/[0.06] group-hover:border-gold-500/20 transition-colors duration-300">
+              <div class="text-white/80 text-sm font-medium mb-1">{sub.short}</div>
+              <div class={`text-xs font-bold ${sub.pct === '100%' ? 'text-gold-400' : 'text-white/30'}`}>{sub.pct}</div>
+            </div>
+            <div class="text-white/20 text-[10px] mt-1 truncate">{sub.name}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>

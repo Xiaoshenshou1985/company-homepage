@@ -1,0 +1,75 @@
+---
+const coreValues = [
+  { icon: '◆', title: '诚信为本', desc: '以诚信立企，以信誉铸魂，构建值得信赖的商业伙伴关系' },
+  { icon: '★', title: '专业立身', desc: '深耕行业领域，以专业能力赢得市场尊重与客户认可' },
+  { icon: '▲', title: '创新驱动', desc: '拥抱前沿科技，以创新思维推动业务模式持续升级' },
+  { icon: '●', title: '价值创造', desc: '聚焦价值创造，为股东、客户、员工和社会创造持续回报' },
+];
+
+const regInfo = [
+  { label: '公司全称', value: '湖北宏邦商务服务有限公司' },
+  { label: '成立时间', value: '2023年10月' },
+  { label: '注册资本', value: '5000万元人民币' },
+  { label: '法定代表人', value: '梁旭' },
+  { label: '注册地址', value: '武汉市江汉区精武路1号越秀国际金融汇T2栋' },
+  { label: '旗下子公司', value: '6家' },
+  { label: '城市布局', value: '武汉 · 苏州 · 杭州' },
+];
+---
+
+<section id="overview" class="py-24 md:py-32 bg-navy-950 relative">
+  <div class="absolute inset-0 bg-gradient-to-b from-navy-900/50 to-transparent h-32"></div>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+    <!-- Section header -->
+    <div class="text-center mb-16 scroll-reveal">
+      <span class="text-gold-400 text-sm tracking-widest uppercase mb-4 block">GROUP OVERVIEW</span>
+      <h2 class="text-3xl md:text-5xl font-bold mb-6">集团概况</h2>
+      <div class="w-20 h-1 bg-gradient-to-r from-gold-400 to-gold-600 mx-auto rounded-full"></div>
+    </div>
+
+    <!-- Company intro -->
+    <div class="grid lg:grid-cols-2 gap-12 mb-20">
+      <div class="scroll-reveal">
+        <h3 class="text-2xl font-bold mb-6 text-gold-400">关于宏邦</h3>
+        <p class="text-white/70 leading-relaxed mb-4">
+          宏邦集团（湖北宏邦商务服务有限公司）成立于2023年10月，注册资本5000万元，是一家以科技创新为引擎、产业协同为纽带、价值创造为目标的综合性企业集团。
+        </p>
+        <p class="text-white/70 leading-relaxed mb-4">
+          集团立足武汉，辐射全国，在苏州、杭州设有分支机构，旗下拥有6家子公司，业务涵盖科技与AI、贸易与供应链、投资与资产管理三大板块。
+        </p>
+        <p class="text-white/70 leading-relaxed">
+          2025年，集团实现营收1.48亿元，同比增长450%，净利润254万元，同比增长474%，总资产达6572万元，展现出强劲的发展势头和卓越的经营能力。
+        </p>
+      </div>
+
+      <!-- Registration info table -->
+      <div class="scroll-reveal">
+        <h3 class="text-2xl font-bold mb-6 text-gold-400">工商信息</h3>
+        <div class="rounded-xl border border-white/10 overflow-hidden">
+          {regInfo.map((item, i) => (
+            <div class={`flex ${i % 2 === 0 ? 'bg-white/[0.02]' : 'bg-white/[0.04]'} ${i < regInfo.length - 1 ? 'border-b border-white/5' : ''}`}>
+              <div class="w-28 sm:w-32 px-4 py-3 text-white/50 text-sm flex-shrink-0 border-r border-white/5">{item.label}</div>
+              <div class="px-4 py-3 text-white/80 text-sm">{item.value}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+
+    <!-- Core values -->
+    <div class="scroll-reveal">
+      <h3 class="text-2xl font-bold mb-10 text-center">核心价值观</h3>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {coreValues.map((val, i) => (
+          <div class="group p-6 rounded-xl bg-white/[0.02] border border-white/[0.06] hover:border-gold-500/30 transition-all duration-300 text-center hover:-translate-y-1">
+            <div class="w-14 h-14 mx-auto mb-4 rounded-xl bg-gradient-to-br from-gold-400/10 to-gold-600/10 flex items-center justify-center text-gold-400 text-2xl group-hover:scale-110 transition-transform duration-300">
+              {val.icon}
+            </div>
+            <h4 class="text-lg font-bold mb-2 text-white">{val.title}</h4>
+            <p class="text-white/50 text-sm leading-relaxed">{val.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>

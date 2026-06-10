@@ -1,0 +1,166 @@
+@import "tailwindcss";
+
+@theme {
+  --color-navy-50: #e8eaf6;
+  --color-navy-100: #c5cae9;
+  --color-navy-200: #9fa8da;
+  --color-navy-300: #7986cb;
+  --color-navy-400: #5c6bc0;
+  --color-navy-500: #3f51b5;
+  --color-navy-600: #303f9f;
+  --color-navy-700: #1a237e;
+  --color-navy-800: #0d1442;
+  --color-navy-900: #060a2e;
+  --color-navy-950: #030618;
+  --color-gold-50: #fff8e1;
+  --color-gold-100: #ffecb3;
+  --color-gold-200: #ffe082;
+  --color-gold-300: #ffd54f;
+  --color-gold-400: #ffca28;
+  --color-gold-500: #d4a017;
+  --color-gold-600: #c49000;
+  --color-gold-700: #a67c00;
+  --color-gold-800: #8a6500;
+  --color-gold-900: #6d4c00;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes pulse-gold {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(212, 160, 23, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 20px 5px rgba(212, 160, 23, 0.2);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.animate-fade-in-left {
+  animation: fadeInLeft 0.8s ease-out forwards;
+}
+
+.animate-fade-in-right {
+  animation: fadeInRight 0.8s ease-out forwards;
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.6s ease-out forwards;
+}
+
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.scroll-reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.scroll-reveal-left {
+  opacity: 0;
+  transform: translateX(-30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.scroll-reveal-left.revealed {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.scroll-reveal-right {
+  opacity: 0;
+  transform: translateX(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.scroll-reveal-right.revealed {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Geometric pattern for hero */
+.hero-pattern {
+  background-image:
+    linear-gradient(30deg, rgba(212, 160, 23, 0.05) 12%, transparent 12.5%, transparent 87%, rgba(212, 160, 23, 0.05) 87.5%, rgba(212, 160, 23, 0.05)),
+    linear-gradient(150deg, rgba(212, 160, 23, 0.05) 12%, transparent 12.5%, transparent 87%, rgba(212, 160, 23, 0.05) 87.5%, rgba(212, 160, 23, 0.05)),
+    linear-gradient(30deg, rgba(212, 160, 23, 0.05) 12%, transparent 12.5%, transparent 87%, rgba(212, 160, 23, 0.05) 87.5%, rgba(212, 160, 23, 0.05)),
+    linear-gradient(150deg, rgba(212, 160, 23, 0.05) 12%, transparent 12.5%, transparent 87%, rgba(212, 160, 23, 0.05) 87.5%, rgba(212, 160, 23, 0.05)),
+    linear-gradient(60deg, rgba(63, 81, 181, 0.08) 25%, transparent 25.5%, transparent 75%, rgba(63, 81, 181, 0.08) 75%, rgba(63, 81, 181, 0.08)),
+    linear-gradient(60deg, rgba(63, 81, 181, 0.08) 25%, transparent 25.5%, transparent 75%, rgba(63, 81, 181, 0.08) 75%, rgba(63, 81, 181, 0.08));
+  background-size: 80px 140px;
+  background-position: 0 0, 0 0, 40px 70px, 40px 70px, 0 0, 40px 70px;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #060a2e;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1a237e;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #303f9f;
+}

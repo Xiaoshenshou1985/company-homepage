@@ -1,0 +1,89 @@
+---
+const segments = [
+  {
+    icon: `<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" class="w-10 h-10">
+      <rect x="6" y="6" width="36" height="36" rx="4" />
+      <circle cx="18" cy="18" r="4" />
+      <path d="M42 30L32 20L10 42" />
+      <circle cx="36" cy="14" r="3" fill="currentColor" opacity="0.3" />
+    </svg>`,
+    title: '科技与AI',
+    subtitle: 'TECHNOLOGY & AI',
+    desc: '聚焦人工智能、区块链、芯片设计、储能技术等前沿科技领域，以技术创新驱动产业升级，打造具有核心竞争力的科技产品与解决方案。',
+    tags: ['人工智能', '区块链技术', '芯片设计', '储能技术', '软件开发'],
+    color: 'from-blue-500/20 to-cyan-500/20',
+    borderColor: 'hover:border-blue-400/30',
+  },
+  {
+    icon: `<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" class="w-10 h-10">
+      <rect x="4" y="14" width="12" height="20" rx="2" />
+      <rect x="18" y="8" width="12" height="26" rx="2" />
+      <rect x="32" y="18" width="12" height="16" rx="2" />
+      <path d="M10 34V38M24 34V38M38 34V38" />
+      <path d="M4 42H44" />
+    </svg>`,
+    title: '贸易与供应链',
+    subtitle: 'TRADE & SUPPLY CHAIN',
+    desc: '深耕大宗商品贸易与供应链管理，依托数字化平台整合上下游资源，提供从采购、仓储、物流到分销的全链条服务，构建高效协同的贸易生态。',
+    tags: ['大宗商品', '供应链管理', '电子元器件', '数字化平台'],
+    color: 'from-emerald-500/20 to-teal-500/20',
+    borderColor: 'hover:border-emerald-400/30',
+  },
+  {
+    icon: `<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" class="w-10 h-10">
+      <circle cx="24" cy="24" r="18" />
+      <path d="M24 12V24L32 28" />
+      <circle cx="24" cy="24" r="3" fill="currentColor" opacity="0.3" />
+      <path d="M36 8L40 4M12 8L8 4" stroke-dasharray="2 2" />
+    </svg>`,
+    title: '投资与资产管理',
+    subtitle: 'INVESTMENT & ASSET MGMT',
+    desc: '以专业的投资眼光和严谨的风控体系，布局战略投资与资产管理，通过资本运作赋能产业发展，实现资产保值增值与长期价值回报。',
+    tags: ['战略投资', '资产管理', '风险控制', '资本运作'],
+    color: 'from-gold-500/20 to-amber-500/20',
+    borderColor: 'hover:border-gold-400/30',
+  },
+];
+---
+
+<section id="business" class="py-24 md:py-32 bg-navy-900/50 relative">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Section header -->
+    <div class="text-center mb-16 scroll-reveal">
+      <span class="text-gold-400 text-sm tracking-widest uppercase mb-4 block">BUSINESS SEGMENTS</span>
+      <h2 class="text-3xl md:text-5xl font-bold mb-6">业务板块</h2>
+      <div class="w-20 h-1 bg-gradient-to-r from-gold-400 to-gold-600 mx-auto rounded-full"></div>
+      <p class="text-white/50 mt-6 max-w-2xl mx-auto">三大核心业务板块协同发展，构建产业生态闭环</p>
+    </div>
+
+    <!-- Business cards -->
+    <div class="grid md:grid-cols-3 gap-8">
+      {segments.map((seg, i) => (
+        <div class={`scroll-reveal group p-8 rounded-2xl bg-white/[0.02] border border-white/[0.06] ${seg.borderColor} transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-gold-500/5`}>
+          <!-- Icon -->
+          <div class={`w-16 h-16 rounded-2xl bg-gradient-to-br ${seg.color} flex items-center justify-center text-gold-400 mb-6 group-hover:scale-110 transition-transform duration-300`}>
+            <Fragment set:html={seg.icon} />
+          </div>
+
+          <!-- Title -->
+          <div class="mb-2">
+            <span class="text-white/30 text-xs tracking-widest">{seg.subtitle}</span>
+          </div>
+          <h3 class="text-2xl font-bold mb-4 text-white group-hover:text-gold-400 transition-colors duration-300">{seg.title}</h3>
+
+          <!-- Description -->
+          <p class="text-white/50 text-sm leading-relaxed mb-6">{seg.desc}</p>
+
+          <!-- Tags -->
+          <div class="flex flex-wrap gap-2">
+            {seg.tags.map((tag) => (
+              <span class="px-3 py-1 rounded-full text-xs text-white/40 bg-white/[0.04] border border-white/[0.06]">
+                {tag}
+              </span>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
