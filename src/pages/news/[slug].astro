@@ -1,0 +1,175 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+
+export function getStaticPaths() {
+  const newsItems = [
+    {
+      slug: '2026-strategic-plan',
+      date: '2026-06-01',
+      category: '集团动态',
+      title: '宏邦集团2026年度战略规划发布',
+      summary: '集团正式发布2026年度战略规划，聚焦AI大模型应用、芯片设计国产化替代及供应链数字化转型三大方向，目标三年内营收突破5亿元。',
+      content: `
+        <p>2026年6月1日，宏邦集团在武汉总部正式发布2026年度战略规划。规划明确了集团未来三年的核心发展方向，聚焦AI大模型应用、芯片设计国产化替代及供应链数字化转型三大战略方向。</p>
+        <h3>三大战略方向</h3>
+        <p><strong>AI大模型应用：</strong>依托武汉百杰科技与苏州奥斯帆科技的技术积累，集团将加大AI大模型在工业场景的落地应用，重点推进智能供应链、智能风控、智能质检等垂直领域解决方案。</p>
+        <p><strong>芯片设计国产化替代：</strong>响应国家集成电路产业战略，集团将加大芯片设计投入，重点布局消费电子与工业控制领域的国产化芯片方案，力争在关键环节实现自主可控。</p>
+        <p><strong>供应链数字化转型：</strong>杭州巨嘉吉贸易将全面推进供应链数字化平台建设，整合采购、仓储、物流、分销全链条数据，打造智能化的供应链管理生态系统。</p>
+        <h3>发展目标</h3>
+        <p>集团提出"三年翻三番"的发展目标：2026年营收突破3亿元，2027年突破5亿元，2028年突破8亿元。同时，净利润率目标从当前的1.7%提升至5%以上，实现规模与效益的同步增长。</p>
+        <p>集团董事长表示："2026年是宏邦集团从快速扩张迈向高质量发展的关键之年。我们将以科技创新为核心驱动力，以产业协同为纽带，持续为股东和社会创造价值。"</p>
+      `,
+    },
+    {
+      slug: 'baijie-key-lab',
+      date: '2026-05-15',
+      category: '科技前沿',
+      title: '武汉百杰科技获批省级重点实验室',
+      summary: '集团旗下武汉百杰科技获批建设湖北省区块链与数字资产重点实验室，标志着集团科研能力获得官方认可。',
+      content: `
+        <p>2026年5月15日，湖北省科技厅正式批复，同意武汉百杰科技发展有限公司建设"湖北省区块链与数字资产重点实验室"。这是集团首个获得省级认定的科研平台，标志着宏邦集团的科研能力获得了官方权威认可。</p>
+        <h3>实验室定位</h3>
+        <p>实验室将聚焦三大研究方向：</p>
+        <ul>
+          <li><strong>区块链底层技术：</strong>研究高性能共识算法、跨链互操作协议、隐私计算等核心基础技术</li>
+          <li><strong>数字资产安全：</strong>探索数字资产确权、交易、托管的全链路安全解决方案</li>
+          <li><strong>产业应用落地：</strong>推进区块链技术在供应链金融、数字贸易、智能制造等场景的深度应用</li>
+        </ul>
+        <h3>科研团队</h3>
+        <p>实验室首期投入研发经费2000万元，已组建由5名博士、12名硕士组成的核心科研团队。实验室主任由武汉百杰科技CTO担任，同时聘请了华中科技大学、武汉大学的3名教授担任学术顾问。</p>
+        <h3>预期成果</h3>
+        <p>实验室计划在未来三年内：申请发明专利15项以上，发表高水平学术论文10篇以上，孵化2-3个区块链技术产业化项目，培养区块链领域高端人才30名以上。</p>
+      `,
+    },
+    {
+      slug: 'jujiaji-central-enterprise-cooperation',
+      date: '2026-04-20',
+      category: '贸易资讯',
+      title: '杭州巨嘉吉贸易与多家央企签署战略合作',
+      summary: '杭州巨嘉吉贸易与中国五矿、中化集团等央企签署大宗商品供应战略合作协议，年度合同金额超8000万元。',
+      content: `
+        <p>2026年4月20日，杭州巨嘉吉贸易有限公司在北京与中国五矿集团、中化集团等多家中央企业签署大宗商品供应战略合作协议，年度合同总金额超过8000万元。</p>
+        <h3>合作内容</h3>
+        <p>根据协议，杭州巨嘉吉贸易将作为中国五矿集团在华东地区的指定有色金属供应商，年供应量预计达5000吨以上；同时与中化集团建立化工产品长期供应关系，覆盖基础化工原料和精细化工产品两大品类。</p>
+        <h3>战略意义</h3>
+        <p>此次与央企的战略合作，标志着巨嘉吉贸易从区域性贸易商向全国性供应链服务商的转型升级。集团贸易板块将以此为契机，进一步拓展与央企、国企的合作深度和广度，构建更加稳定、高效的供应链生态。</p>
+        <h3>数字化赋能</h3>
+        <p>值得一提的是，此次合作将全面启用集团自主研发的数字化供应链管理平台，实现从订单、采购、仓储到配送的全流程数字化管理，预计可降低运营成本15%-20%，大幅提升供应链响应速度和服务质量。</p>
+      `,
+    },
+    {
+      slug: 'hongan-xingchen-capital-increase',
+      date: '2026-03-10',
+      category: '投资布局',
+      title: '宏邦集团完成对宏安兴宸新材料增资',
+      summary: '集团完成对参投企业宏安兴宸新材料的增资扩股，持股比例提升至15%，进一步深化电子专用材料领域布局。',
+      content: `
+        <p>2026年3月10日，宏邦集团完成对参投企业宏安兴宸新材料有限公司的增资扩股，持股比例从此前的10%提升至15%，进一步深化在电子专用材料领域的战略布局。</p>
+        <h3>增资背景</h3>
+        <p>宏安兴宸新材料成立于2024年9月，位于杭州，专注于电子专用材料的制造、研发与销售。公司成立以来发展迅速，已与多家半导体企业建立合作关系，产品覆盖电子级高纯金属、半导体封装材料等细分领域。</p>
+        <h3>战略考量</h3>
+        <p>集团投资负责人表示："电子专用材料是半导体产业链的关键上游环节，国产替代空间巨大。增资宏安兴宸是集团在先进材料领域的重要落子，与科技板块的芯片设计业务形成上下游协同。"</p>
+        <h3>未来规划</h3>
+        <p>增资完成后，宏安兴宸将启动二期产线建设，预计2027年投产，届时产能将提升3倍。集团将依托武汉百杰科技的技术能力，为宏安兴宸提供材料研发的技术支持，实现"投资+技术"的双重赋能。</p>
+      `,
+    },
+    {
+      slug: 'aoshfan-ai-chip-platform',
+      date: '2026-02-28',
+      category: '科技前沿',
+      title: '苏州奥斯帆科技发布自研AI芯片验证平台',
+      summary: '苏州奥斯帆科技正式发布自主研发的AI芯片验证平台V1.0，为国内芯片设计企业提供高效低成本的验证解决方案。',
+      content: `
+        <p>2026年2月28日，苏州奥斯帆科技有限公司在苏州工业园区举办产品发布会，正式推出自主研发的AI芯片验证平台V1.0。该平台是国内首批面向AI芯片设计的全流程验证工具之一。</p>
+        <h3>平台特点</h3>
+        <p>AI芯片验证平台V1.0具备以下核心能力：</p>
+        <ul>
+          <li><strong>全流程覆盖：</strong>从RTL仿真、功能验证到性能分析，覆盖芯片验证全流程</li>
+          <li><strong>AI驱动：</strong>内置智能测试用例生成引擎，可自动生成覆盖率90%以上的测试用例</li>
+          <li><strong>云端部署：</strong>支持云端弹性扩展，验证效率较传统方案提升5-10倍</li>
+          <li><strong>成本优势：</strong>综合验证成本较国际同类产品降低60%以上</li>
+        </ul>
+        <h3>市场前景</h3>
+        <p>随着国内芯片设计产业的快速发展，芯片验证市场需求持续增长。据行业报告，2025年中国芯片验证市场规模已超50亿元，预计2028年将突破100亿元。奥斯帆科技的AI芯片验证平台有望在这一蓝海市场中占据重要份额。</p>
+        <h3>客户反馈</h3>
+        <p>目前平台已进入3家国内芯片设计企业的试用阶段，初步反馈显示验证效率提升显著，客户满意度高。奥斯帆科技计划在2026年下半年推出V2.0版本，新增FPGA原型验证和硅后调试功能。</p>
+      `,
+    },
+    {
+      slug: '2025-annual-summary',
+      date: '2026-01-15',
+      category: '集团动态',
+      title: '宏邦集团2025年度总结暨2026新春年会圆满举行',
+      summary: '集团在武汉总部举行2025年度总结大会，全年营收突破1.48亿元，同比增长450%，各板块业务均实现跨越式发展。',
+      content: `
+        <p>2026年1月15日，宏邦集团2025年度总结暨2026新春年会在武汉总部越秀国际金融汇T2栋隆重举行。集团全体员工、各子公司管理层及特邀嘉宾共计120余人出席了本次盛会。</p>
+        <h3>2025年度业绩回顾</h3>
+        <p>2025年是宏邦集团实现跨越式发展的一年：</p>
+        <ul>
+          <li>全年营业收入突破<strong>1.48亿元</strong>，同比增长<strong>450%</strong></li>
+          <li>净利润达<strong>254万元</strong>，同比增长<strong>474%</strong></li>
+          <li>总资产规模达<strong>6572万元</strong></li>
+          <li>完成"武汉+苏州+杭州"三地协同布局</li>
+          <li>旗下子公司矩阵扩展至6家</li>
+        </ul>
+        <h3>各板块亮点</h3>
+        <p><strong>科技板块：</strong>武汉百杰科技与苏州奥斯帆科技全年研发投入超800万元，申请专利7项，获得软件著作权12项。</p>
+        <p><strong>贸易板块：</strong>杭州巨嘉吉贸易全年贸易额突破1亿元，客户覆盖金属制品、电子产品、化工产品等数十个品类。</p>
+        <p><strong>投资板块：</strong>参投企业宏安兴宸新材料完成产线建设并投产，中旺众邦工程机械在增材制造领域取得技术突破。</p>
+        <h3>2026年展望</h3>
+        <p>集团董事长在总结发言中提出了2026年的三大重点任务：一是加大科技创新投入，力争研发投入占比提升至8%；二是深化供应链数字化转型，打造行业领先的智能供应链平台；三是拓展投资版图，重点布局新材料和先进制造领域。</p>
+      `,
+    },
+  ];
+
+  return newsItems.map((item) => ({
+    params: { slug: item.slug },
+    props: { item },
+  }));
+}
+
+const { item } = Astro.props;
+const pageTitle = `${item.title} - 宏邦集团`;
+---
+
+<Layout title={pageTitle}>
+  <Navbar />
+
+  <article class="pt-28 pb-20 parchment-bg">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Back link -->
+      <a href="/news" class="inline-flex items-center gap-2 text-seal-500 hover:text-seal-600 text-sm font-medium mb-8 transition-colors">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+        </svg>
+        返回新闻列表
+      </a>
+
+      <!-- Article header -->
+      <header class="mb-10">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="text-ink-300 text-sm">{item.date}</span>
+          <span class="px-2.5 py-0.5 rounded-full text-xs bg-seal-50 text-seal-600 border border-seal-100">{item.category}</span>
+        </div>
+        <h1 class="text-3xl md:text-4xl font-bold text-ink-800 leading-snug mb-4">{item.title}</h1>
+        <div class="w-16 h-0.5 bg-gradient-to-r from-ink-600 to-ink-400"></div>
+      </header>
+
+      <!-- Article body -->
+      <div class="prose-parchment text-ink-600 leading-relaxed space-y-5 text-base [&_h3]:text-ink-800 [&_h3]:text-xl [&_h3]:font-bold [&_h3]:mt-8 [&_h3]:mb-4 [&_p]:mb-4 [&_ul]:list-disc [&_ul]:pl-6 [&_ul]:mb-4 [&_ul]:space-y-2 [&_li]:text-ink-500 [&_strong]:text-ink-700">
+        <Fragment set:html={item.content} />
+      </div>
+
+      <!-- Bottom navigation -->
+      <div class="mt-16 pt-8 border-t border-parchment-200">
+        <a href="/news" class="inline-flex items-center gap-2 text-seal-500 hover:text-seal-600 font-medium transition-colors">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+          </svg>
+          返回新闻列表
+        </a>
+      </div>
+    </div>
+  </article>
+</Layout>

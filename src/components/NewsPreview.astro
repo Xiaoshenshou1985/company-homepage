@@ -1,16 +1,19 @@
 ---
 const newsItems = [
   {
+    slug: '2026-strategic-plan',
     date: '2026-06-01',
     title: '宏邦集团2026年度战略规划发布',
     summary: '集团正式发布2026年度战略规划，聚焦AI大模型应用、芯片设计国产化替代及供应链数字化转型三大方向。',
   },
   {
+    slug: 'baijie-key-lab',
     date: '2026-05-15',
     title: '武汉百杰科技获批省级重点实验室',
     summary: '集团旗下武汉百杰科技获批建设湖北省区块链与数字资产重点实验室，标志着集团科研能力获得官方认可。',
   },
   {
+    slug: 'jujiaji-central-enterprise-cooperation',
     date: '2026-04-20',
     title: '杭州巨嘉吉贸易与多家央企签署战略合作',
     summary: '杭州巨嘉吉贸易与中国五矿、中化集团等央企签署大宗商品供应战略合作协议，年度合同金额超8000万元。',
@@ -30,7 +33,7 @@ const newsItems = [
     <!-- News cards -->
     <div class="grid md:grid-cols-3 gap-8">
       {newsItems.map((item, i) => (
-        <a href="/news" class="scroll-reveal group block p-6 rounded-2xl bg-parchment-50 border border-parchment-200/50 shadow-sm hover:shadow-md hover:border-parchment-400 transition-all duration-300 hover:-translate-y-1">
+        <a href={`/news/${item.slug}`} class="scroll-reveal group block p-6 rounded-2xl bg-parchment-50 border border-parchment-200/50 shadow-sm hover:shadow-md hover:border-parchment-400 transition-all duration-300 hover:-translate-y-1">
           <div class="text-seal-500 text-sm font-medium mb-3">{item.date}</div>
           <h3 class="text-lg font-bold mb-3 text-ink-800 group-hover:text-seal-500 transition-colors leading-snug">{item.title}</h3>
           <p class="text-ink-400 text-sm leading-relaxed mb-4">{item.summary}</p>
