@@ -11,8 +11,8 @@ const segments = [
     subtitle: 'TECHNOLOGY & AI',
     desc: '聚焦人工智能、区块链、芯片设计、储能技术等前沿科技领域，以技术创新驱动产业升级，打造具有核心竞争力的科技产品与解决方案。',
     tags: ['人工智能', '区块链技术', '芯片设计', '储能技术', '软件开发'],
-    color: 'from-primary-50 to-primary-100',
-    iconColor: 'text-primary-500',
+    color: 'from-parchment-100 to-parchment-200',
+    iconColor: 'text-ink-600',
   },
   {
     icon: `<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" class="w-10 h-10">
@@ -26,8 +26,8 @@ const segments = [
     subtitle: 'TRADE & SUPPLY CHAIN',
     desc: '深耕大宗商品贸易与供应链管理，依托数字化平台整合上下游资源，提供从采购、仓储、物流到分销的全链条服务，构建高效协同的贸易生态。',
     tags: ['大宗商品', '供应链管理', '电子元器件', '数字化平台'],
-    color: 'from-accent-50 to-accent-100',
-    iconColor: 'text-accent-500',
+    color: 'from-seal-50 to-seal-100',
+    iconColor: 'text-seal-500',
   },
   {
     icon: `<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" class="w-10 h-10">
@@ -40,26 +40,26 @@ const segments = [
     subtitle: 'INVESTMENT & ASSET MGMT',
     desc: '以专业的投资眼光和严谨的风控体系，布局战略投资与资产管理，通过资本运作赋能产业发展，实现资产保值增值与长期价值回报。',
     tags: ['战略投资', '资产管理', '风险控制', '资本运作'],
-    color: 'from-primary-50 to-accent-50',
-    iconColor: 'text-primary-500',
+    color: 'from-parchment-100 to-parchment-200',
+    iconColor: 'text-ink-600',
   },
 ];
 ---
 
-<section id="business" class="py-24 md:py-32 bg-white relative">
+<section id="business" class="py-24 md:py-32 parchment-bg relative">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <!-- Section header -->
     <div class="text-center mb-16 scroll-reveal">
-      <span class="text-primary-500 text-sm tracking-widest uppercase mb-4 block">BUSINESS SEGMENTS</span>
-      <h2 class="text-3xl md:text-5xl font-bold mb-6 text-surface-900">业务板块</h2>
-      <div class="w-20 h-1 bg-gradient-to-r from-primary-500 to-primary-600 mx-auto rounded-full"></div>
-      <p class="text-surface-500 mt-6 max-w-2xl mx-auto">三大核心业务板块协同发展，构建产业生态闭环</p>
+      <span class="text-seal-500 text-sm tracking-widest uppercase mb-4 block">BUSINESS SEGMENTS</span>
+      <h2 class="text-3xl md:text-5xl font-bold mb-6 text-ink-800">业务板块</h2>
+      <div class="w-20 h-1 bg-gradient-to-r from-ink-600 to-ink-400 mx-auto rounded-full"></div>
+      <p class="text-ink-400 mt-6 max-w-2xl mx-auto">三大核心业务板块协同发展，构建产业生态闭环</p>
     </div>
 
     <!-- Business cards -->
     <div class="grid md:grid-cols-3 gap-8">
       {segments.map((seg, i) => (
-        <div class="scroll-reveal group p-8 rounded-2xl bg-white border border-surface-200/50 shadow-sm hover:shadow-lg hover:border-primary-200 transition-all duration-500 hover:-translate-y-2">
+        <div class="scroll-reveal group p-8 rounded-2xl bg-parchment-50 border border-parchment-200/50 shadow-sm hover:shadow-lg hover:border-parchment-400 transition-all duration-500 hover:-translate-y-2">
           <!-- Icon -->
           <div class={`w-16 h-16 rounded-2xl bg-gradient-to-br ${seg.color} flex items-center justify-center ${seg.iconColor} mb-6 group-hover:scale-110 transition-transform duration-300`}>
             <Fragment set:html={seg.icon} />
@@ -67,17 +67,17 @@ const segments = [
 
           <!-- Title -->
           <div class="mb-2">
-            <span class="text-surface-400 text-xs tracking-widest">{seg.subtitle}</span>
+            <span class="text-ink-300 text-xs tracking-widest">{seg.subtitle}</span>
           </div>
-          <h3 class="text-2xl font-bold mb-4 text-surface-900 group-hover:text-primary-500 transition-colors duration-300">{seg.title}</h3>
+          <h3 class="text-2xl font-bold mb-4 text-ink-800 group-hover:text-seal-500 transition-colors duration-300">{seg.title}</h3>
 
           <!-- Description -->
-          <p class="text-surface-500 text-sm leading-relaxed mb-6">{seg.desc}</p>
+          <p class="text-ink-400 text-sm leading-relaxed mb-6">{seg.desc}</p>
 
           <!-- Tags -->
           <div class="flex flex-wrap gap-2">
             {seg.tags.map((tag) => (
-              <span class="px-3 py-1 rounded-full text-xs bg-primary-50 text-primary-600 border border-primary-100">
+              <span class="px-3 py-1 rounded-full text-xs bg-parchment-100 text-ink-500 border border-parchment-200">
                 {tag}
               </span>
             ))}

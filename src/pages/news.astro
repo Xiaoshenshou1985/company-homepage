@@ -8,42 +8,42 @@ const newsItems = [
     category: '集团动态',
     title: '宏邦集团2026年度战略规划发布',
     summary: '集团正式发布2026年度战略规划，聚焦AI大模型应用、芯片设计国产化替代及供应链数字化转型三大方向，目标三年内营收突破5亿元。',
-    gradient: 'from-primary-400 to-primary-600',
+    gradient: 'from-ink-600 to-ink-800',
   },
   {
     date: '2026-05-15',
     category: '科技前沿',
     title: '武汉百杰科技获批省级重点实验室',
     summary: '集团旗下武汉百杰科技获批建设湖北省区块链与数字资产重点实验室，标志着集团科研能力获得官方认可。',
-    gradient: 'from-accent-400 to-accent-600',
+    gradient: 'from-seal-500 to-seal-700',
   },
   {
     date: '2026-04-20',
     category: '贸易资讯',
     title: '杭州巨嘉吉贸易与多家央企签署战略合作',
     summary: '杭州巨嘉吉贸易与中国五矿、中化集团等央企签署大宗商品供应战略合作协议，年度合同金额超8000万元。',
-    gradient: 'from-emerald-400 to-teal-600',
+    gradient: 'from-parchment-600 to-parchment-800',
   },
   {
     date: '2026-03-10',
     category: '投资布局',
     title: '宏邦集团完成对宏安兴宸新材料增资',
     summary: '集团完成对参投企业宏安兴宸新材料的增资扩股，持股比例提升至15%，进一步深化电子专用材料领域布局。',
-    gradient: 'from-amber-400 to-orange-600',
+    gradient: 'from-ink-500 to-ink-700',
   },
   {
     date: '2026-02-28',
     category: '科技前沿',
     title: '苏州奥斯帆科技发布自研AI芯片验证平台',
     summary: '苏州奥斯帆科技正式发布自主研发的AI芯片验证平台V1.0，为国内芯片设计企业提供高效低成本的验证解决方案。',
-    gradient: 'from-violet-400 to-purple-600',
+    gradient: 'from-parchment-500 to-parchment-700',
   },
   {
     date: '2026-01-15',
     category: '集团动态',
     title: '宏邦集团2025年度总结暨2026新春年会圆满举行',
     summary: '集团在武汉总部举行2025年度总结大会，全年营收突破1.48亿元，同比增长450%，各板块业务均实现跨越式发展。',
-    gradient: 'from-rose-400 to-pink-600',
+    gradient: 'from-seal-400 to-seal-600',
   },
 ];
 
@@ -54,21 +54,21 @@ const categories = ['全部', '集团动态', '科技前沿', '贸易资讯', '�
   <Navbar />
 
   <!-- Hero banner -->
-  <section class="relative pt-32 pb-20 bg-surface-50 hero-pattern">
+  <section class="relative pt-32 pb-20 parchment-bg-alt hero-pattern">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <span class="text-primary-500 text-sm tracking-widest uppercase mb-4 block">LATEST NEWS</span>
-      <h1 class="text-4xl md:text-6xl font-bold mb-6 text-surface-900">新闻动态</h1>
-      <p class="text-surface-500 text-lg">了解宏邦集团最新动态</p>
+      <span class="text-seal-500 text-sm tracking-widest uppercase mb-4 block">LATEST NEWS</span>
+      <h1 class="text-4xl md:text-6xl font-bold mb-6 text-ink-800">新闻动态</h1>
+      <p class="text-ink-400 text-lg">了解宏邦集团最新动态</p>
     </div>
   </section>
 
   <!-- Filter tabs -->
-  <section class="bg-white border-b border-surface-200/50 sticky top-16 z-40">
+  <section class="bg-parchment-50 border-b border-parchment-200/50 sticky top-16 z-40">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center gap-2 py-4 overflow-x-auto" id="news-tabs">
         {categories.map((cat, i) => (
           <button
-            class={`news-tab px-4 py-2 rounded-full text-sm font-medium whitespace-nowrap transition-colors duration-200 ${i === 0 ? 'bg-primary-500 text-white' : 'bg-surface-100 text-surface-500 hover:bg-surface-200'}`}
+            class={`news-tab px-4 py-2 rounded-full text-sm font-medium whitespace-nowrap transition-colors duration-200 ${i === 0 ? 'bg-ink-700 text-parchment-50' : 'bg-parchment-100 text-ink-400 hover:bg-parchment-200'}`}
             data-category={cat}
           >
             {cat}
@@ -79,43 +79,43 @@ const categories = ['全部', '集团动态', '科技前沿', '贸易资讯', '�
   </section>
 
   <!-- News grid -->
-  <section class="py-16 bg-white">
+  <section class="py-16 parchment-bg">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8" id="news-grid">
         {newsItems.map((item, i) => (
-          <div class="news-card group rounded-xl overflow-hidden bg-white border border-surface-200/50 shadow-sm hover:shadow-md hover:border-primary-200 transition-all duration-300 hover:-translate-y-1" data-category={item.category}>
+          <a href="/news" class="news-card group block rounded-xl overflow-hidden bg-parchment-50 border border-parchment-200/50 shadow-sm hover:shadow-md hover:border-parchment-400 transition-all duration-300 hover:-translate-y-1" data-category={item.category}>
             <!-- Image placeholder -->
             <div class={`h-48 bg-gradient-to-br ${item.gradient} flex items-center justify-center`}>
-              <svg class="w-12 h-12 text-white/30" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg class="w-12 h-12 text-parchment-200/30" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
               </svg>
             </div>
             <!-- Content -->
             <div class="p-6">
               <div class="flex items-center gap-3 mb-3">
-                <span class="text-surface-400 text-xs">{item.date}</span>
-                <span class="px-2 py-0.5 rounded-full text-xs bg-primary-50 text-primary-600 border border-primary-100">{item.category}</span>
+                <span class="text-ink-300 text-xs">{item.date}</span>
+                <span class="px-2 py-0.5 rounded-full text-xs bg-seal-50 text-seal-600 border border-seal-100">{item.category}</span>
               </div>
-              <h3 class="text-lg font-bold mb-3 text-surface-900 group-hover:text-primary-500 transition-colors leading-snug">{item.title}</h3>
-              <p class="text-surface-500 text-sm leading-relaxed mb-4">{item.summary}</p>
-              <span class="text-primary-500 text-sm font-medium inline-flex items-center gap-1 group-hover:gap-2 transition-all">
+              <h3 class="text-lg font-bold mb-3 text-ink-800 group-hover:text-seal-500 transition-colors leading-snug">{item.title}</h3>
+              <p class="text-ink-400 text-sm leading-relaxed mb-4">{item.summary}</p>
+              <span class="text-seal-500 text-sm font-medium inline-flex items-center gap-1 group-hover:gap-2 transition-all">
                 阅读更多
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
                 </svg>
               </span>
             </div>
-          </div>
+          </a>
         ))}
       </div>
 
       <!-- Pagination placeholder -->
       <div class="flex items-center justify-center mt-16 gap-2">
-        <button class="w-10 h-10 rounded-lg bg-primary-500 text-white text-sm font-medium">1</button>
-        <button class="w-10 h-10 rounded-lg bg-surface-100 text-surface-500 text-sm font-medium hover:bg-surface-200 transition-colors">2</button>
-        <button class="w-10 h-10 rounded-lg bg-surface-100 text-surface-500 text-sm font-medium hover:bg-surface-200 transition-colors">3</button>
-        <span class="text-surface-400 px-2">...</span>
-        <button class="w-10 h-10 rounded-lg bg-surface-100 text-surface-500 text-sm font-medium hover:bg-surface-200 transition-colors">下一页</button>
+        <button class="w-10 h-10 rounded-lg bg-ink-700 text-parchment-50 text-sm font-medium">1</button>
+        <button class="w-10 h-10 rounded-lg bg-parchment-100 text-ink-400 text-sm font-medium hover:bg-parchment-200 transition-colors">2</button>
+        <button class="w-10 h-10 rounded-lg bg-parchment-100 text-ink-400 text-sm font-medium hover:bg-parchment-200 transition-colors">3</button>
+        <span class="text-ink-400 px-2">...</span>
+        <button class="w-10 h-10 rounded-lg bg-parchment-100 text-ink-400 text-sm font-medium hover:bg-parchment-200 transition-colors">下一页</button>
       </div>
     </div>
   </section>
@@ -129,11 +129,11 @@ const categories = ['全部', '集团动态', '科技前沿', '贸易资讯', '�
     tab.addEventListener('click', () => {
       // Update active tab
       tabs.forEach((t) => {
-        t.classList.remove('bg-primary-500', 'text-white');
-        t.classList.add('bg-surface-100', 'text-surface-500');
+        t.classList.remove('bg-ink-700', 'text-parchment-50');
+        t.classList.add('bg-parchment-100', 'text-ink-400');
       });
-      tab.classList.remove('bg-surface-100', 'text-surface-500');
-      tab.classList.add('bg-primary-500', 'text-white');
+      tab.classList.remove('bg-parchment-100', 'text-ink-400');
+      tab.classList.add('bg-ink-700', 'text-parchment-50');
 
       const category = tab.getAttribute('data-category');
 

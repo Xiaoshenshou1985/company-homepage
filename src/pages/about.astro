@@ -19,19 +19,6 @@ const regInfo = [
   { label: '城市布局', value: '武汉 · 苏州 · 杭州' },
 ];
 
-const shareholders = [
-  {
-    name: '梁旭',
-    pct: '90%',
-    role: '董事长',
-  },
-  {
-    name: '曹放',
-    pct: '10%',
-    role: '董事',
-  },
-];
-
 const subsidiaries = [
   { name: '武汉百杰科技', pct: '100%', short: '百杰' },
   { name: '苏州奥斯帆科技', pct: '100%', short: '奥斯帆' },
@@ -46,39 +33,39 @@ const subsidiaries = [
   <Navbar />
 
   <!-- Hero banner -->
-  <section class="relative pt-32 pb-20 bg-surface-50 hero-pattern">
+  <section class="relative pt-32 pb-20 parchment-bg-alt hero-pattern">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <span class="text-primary-500 text-sm tracking-widest uppercase mb-4 block">ABOUT HONGBANG</span>
-      <h1 class="text-4xl md:text-6xl font-bold mb-6 text-surface-900">关于宏邦</h1>
-      <div class="w-20 h-1 bg-gradient-to-r from-primary-500 to-primary-600 mx-auto rounded-full"></div>
+      <span class="text-seal-500 text-sm tracking-widest uppercase mb-4 block">ABOUT HONGBANG</span>
+      <h1 class="text-4xl md:text-6xl font-bold mb-6 text-ink-800">关于宏邦</h1>
+      <div class="w-20 h-1 bg-gradient-to-r from-ink-600 to-ink-400 mx-auto rounded-full"></div>
     </div>
   </section>
 
   <!-- Company overview -->
-  <section class="py-24 bg-white">
+  <section class="py-24 parchment-bg">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid lg:grid-cols-2 gap-12">
         <div class="scroll-reveal">
-          <h3 class="text-2xl font-bold mb-6 text-primary-500">公司简介</h3>
-          <p class="text-surface-600 leading-relaxed mb-4">
+          <h3 class="text-2xl font-bold mb-6 text-seal-500">公司简介</h3>
+          <p class="text-ink-500 leading-relaxed mb-4">
             宏邦集团（湖北宏邦商务服务有限公司）成立于2023年10月，注册资本5000万元，是一家以科技创新为引擎、产业协同为纽带、价值创造为目标的综合性企业集团。
           </p>
-          <p class="text-surface-600 leading-relaxed mb-4">
+          <p class="text-ink-500 leading-relaxed mb-4">
             集团立足武汉，辐射全国，在苏州、杭州设有分支机构，旗下拥有6家子公司，业务涵盖科技与AI、贸易与供应链、投资与资产管理三大板块。
           </p>
-          <p class="text-surface-600 leading-relaxed">
+          <p class="text-ink-500 leading-relaxed">
             2025年，集团实现营收1.48亿元，同比增长450%，净利润254万元，同比增长474%，总资产达6572万元，展现出强劲的发展势头和卓越的经营能力。
           </p>
         </div>
 
         <!-- Registration info table -->
         <div class="scroll-reveal">
-          <h3 class="text-2xl font-bold mb-6 text-primary-500">工商信息</h3>
-          <div class="rounded-xl border border-surface-200/50 overflow-hidden shadow-sm">
+          <h3 class="text-2xl font-bold mb-6 text-seal-500">工商信息</h3>
+          <div class="rounded-xl border border-parchment-200/50 overflow-hidden shadow-sm">
             {regInfo.map((item, i) => (
-              <div class={`flex ${i % 2 === 0 ? 'bg-surface-50' : 'bg-white'} ${i < regInfo.length - 1 ? 'border-b border-surface-200/50' : ''}`}>
-                <div class="w-28 sm:w-32 px-4 py-3 text-surface-500 text-sm flex-shrink-0 border-r border-surface-200/50 font-medium">{item.label}</div>
-                <div class="px-4 py-3 text-surface-700 text-sm">{item.value}</div>
+              <div class={`flex ${i % 2 === 0 ? 'bg-parchment-50' : 'bg-parchment-100'} ${i < regInfo.length - 1 ? 'border-b border-parchment-200/50' : ''}`}>
+                <div class="w-28 sm:w-32 px-4 py-3 text-ink-400 text-sm flex-shrink-0 border-r border-parchment-200/50 font-medium">{item.label}</div>
+                <div class="px-4 py-3 text-ink-600 text-sm">{item.value}</div>
               </div>
             ))}
           </div>
@@ -88,22 +75,22 @@ const subsidiaries = [
   </section>
 
   <!-- Core values -->
-  <section class="py-24 bg-surface-50">
+  <section class="py-24 parchment-bg-alt">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-16 scroll-reveal">
-        <span class="text-primary-500 text-sm tracking-widest uppercase mb-4 block">CORE VALUES</span>
-        <h2 class="text-3xl md:text-5xl font-bold mb-6 text-surface-900">核心价值观</h2>
-        <div class="w-20 h-1 bg-gradient-to-r from-primary-500 to-primary-600 mx-auto rounded-full"></div>
+        <span class="text-seal-500 text-sm tracking-widest uppercase mb-4 block">CORE VALUES</span>
+        <h2 class="text-3xl md:text-5xl font-bold mb-6 text-ink-800">核心价值观</h2>
+        <div class="w-20 h-1 bg-gradient-to-r from-ink-600 to-ink-400 mx-auto rounded-full"></div>
       </div>
 
       <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
         {coreValues.map((val, i) => (
-          <div class="scroll-reveal group p-6 rounded-xl bg-white border border-surface-200/50 shadow-sm hover:shadow-md hover:border-primary-200 transition-all duration-300 text-center hover:-translate-y-1">
-            <div class="w-14 h-14 mx-auto mb-4 rounded-xl bg-gradient-to-br from-primary-50 to-primary-100 flex items-center justify-center text-primary-500 text-2xl group-hover:scale-110 transition-transform duration-300">
+          <div class="scroll-reveal group p-6 rounded-xl bg-parchment-50 border border-parchment-200/50 shadow-sm hover:shadow-md hover:border-parchment-400 transition-all duration-300 text-center hover:-translate-y-1">
+            <div class="w-14 h-14 mx-auto mb-4 rounded-xl bg-parchment-100 text-seal-500 flex items-center justify-center text-2xl group-hover:scale-110 transition-transform duration-300">
               {val.icon}
             </div>
-            <h4 class="text-lg font-bold mb-2 text-surface-900">{val.title}</h4>
-            <p class="text-surface-500 text-sm leading-relaxed">{val.desc}</p>
+            <h4 class="text-lg font-bold mb-2 text-ink-700">{val.title}</h4>
+            <p class="text-ink-400 text-sm leading-relaxed">{val.desc}</p>
           </div>
         ))}
       </div>
@@ -111,61 +98,53 @@ const subsidiaries = [
   </section>
 
   <!-- Organization structure -->
-  <section class="py-24 bg-white">
+  <section class="py-24 parchment-bg">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-16 scroll-reveal">
-        <span class="text-primary-500 text-sm tracking-widest uppercase mb-4 block">ORGANIZATION</span>
-        <h2 class="text-3xl md:text-5xl font-bold mb-6 text-surface-900">组织架构</h2>
-        <div class="w-20 h-1 bg-gradient-to-r from-primary-500 to-primary-600 mx-auto rounded-full"></div>
+        <span class="text-seal-500 text-sm tracking-widest uppercase mb-4 block">ORGANIZATION</span>
+        <h2 class="text-3xl md:text-5xl font-bold mb-6 text-ink-800">组织架构</h2>
+        <div class="w-20 h-1 bg-gradient-to-r from-ink-600 to-ink-400 mx-auto rounded-full"></div>
       </div>
 
       <div class="scroll-reveal max-w-5xl mx-auto">
         <!-- Top: Hongbang Group -->
         <div class="text-center mb-8">
-          <div class="inline-block px-8 py-4 rounded-xl bg-gradient-to-r from-primary-50 to-primary-100 border border-primary-200">
-            <div class="text-primary-600 font-bold text-xl">宏邦集团</div>
-            <div class="text-surface-400 text-xs mt-1">湖北宏邦商务服务有限公司</div>
+          <div class="inline-block px-8 py-4 rounded-xl bg-parchment-100 border border-parchment-200/50 shadow-sm">
+            <div class="text-ink-700 font-bold text-xl">宏邦集团</div>
+            <div class="text-ink-400 text-xs mt-1">湖北宏邦商务服务有限公司</div>
           </div>
         </div>
 
         <!-- Connector line down -->
         <div class="flex justify-center mb-2">
-          <div class="w-px h-8 bg-surface-300"></div>
+          <div class="w-px h-8 bg-parchment-400"></div>
         </div>
 
-        <!-- Shareholders row -->
-        <div class="flex justify-center gap-8 md:gap-16 mb-8">
-          {shareholders.map((s) => (
-            <div class="text-center">
-              <div class="px-6 py-4 rounded-xl bg-surface-50 border border-surface-200/50 shadow-sm mb-3">
-                <div class="text-surface-900 font-bold text-lg">{s.name}</div>
-                <div class="flex items-center justify-center gap-2 mt-1">
-                  <span class="text-primary-500 font-bold text-sm">{s.pct}</span>
-                  <span class="text-surface-300 text-xs">|</span>
-                  <span class="text-surface-500 text-xs">{s.role}</span>
-                </div>
-              </div>
-            </div>
-          ))}
+        <!-- Board of Directors -->
+        <div class="flex justify-center mb-8">
+          <div class="px-8 py-4 rounded-xl bg-parchment-100 border border-parchment-200/50 shadow-sm">
+            <div class="text-ink-700 font-bold text-lg">董事会</div>
+            <div class="text-ink-400 text-xs">Board of Directors</div>
+          </div>
         </div>
 
         <!-- Connector -->
         <div class="flex justify-center mb-2">
-          <div class="w-px h-6 bg-surface-300"></div>
+          <div class="w-px h-6 bg-parchment-400"></div>
         </div>
         <div class="flex justify-center mb-2">
-          <div class="w-3/4 max-w-2xl h-px bg-surface-300"></div>
+          <div class="w-3/4 max-w-2xl h-px bg-parchment-400"></div>
         </div>
 
         <!-- Subsidiaries grid -->
         <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 mt-6">
           {subsidiaries.map((sub) => (
             <div class="text-center group">
-              <div class="px-3 py-3 rounded-lg bg-white border border-surface-200/50 shadow-sm group-hover:border-primary-200 transition-colors duration-300">
-                <div class="text-surface-700 text-sm font-medium mb-1">{sub.short}</div>
-                <div class={`text-xs font-bold ${sub.pct === '100%' ? 'text-primary-500' : 'text-surface-400'}`}>{sub.pct}</div>
+              <div class="px-3 py-3 rounded-lg bg-parchment-50 border border-parchment-200/50 shadow-sm group-hover:border-parchment-400 transition-colors duration-300">
+                <div class="text-ink-700 text-sm font-medium mb-1">{sub.short}</div>
+                <div class={`text-xs font-bold ${sub.pct === '100%' ? 'text-seal-500' : 'text-ink-400'}`}>{sub.pct}</div>
               </div>
-              <div class="text-surface-400 text-[10px] mt-1 truncate">{sub.name}</div>
+              <div class="text-ink-400 text-[10px] mt-1 truncate">{sub.name}</div>
             </div>
           ))}
         </div>
@@ -174,9 +153,9 @@ const subsidiaries = [
   </section>
 
   <!-- Back to homepage -->
-  <section class="py-12 bg-surface-50">
+  <section class="py-12 parchment-bg-alt">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <a href="/" class="inline-flex items-center gap-2 text-primary-500 hover:text-primary-600 font-medium transition-colors">
+      <a href="/" class="inline-flex items-center gap-2 text-seal-500 hover:text-seal-600 font-medium transition-colors">
         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
         </svg>
