@@ -27,27 +27,27 @@ const contactInfo = [
 ];
 ---
 
-<section id="contact" class="py-24 md:py-32 bg-navy-950 relative">
+<section id="contact" class="py-24 md:py-32 bg-surface-900 text-white relative">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <!-- Section header -->
     <div class="text-center mb-16 scroll-reveal">
-      <span class="text-gold-400 text-sm tracking-widest uppercase mb-4 block">CONTACT US</span>
+      <span class="text-primary-400 text-sm tracking-widest uppercase mb-4 block">CONTACT US</span>
       <h2 class="text-3xl md:text-5xl font-bold mb-6">联系我们</h2>
-      <div class="w-20 h-1 bg-gradient-to-r from-gold-400 to-gold-600 mx-auto rounded-full"></div>
+      <div class="w-20 h-1 bg-gradient-to-r from-primary-400 to-primary-600 mx-auto rounded-full"></div>
     </div>
 
     <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
       {contactInfo.map((info, i) => (
         <a
           href={info.href}
-          class="scroll-reveal group flex items-start gap-4 p-6 rounded-xl bg-white/[0.02] border border-white/[0.06] hover:border-gold-500/20 transition-all duration-300 hover:-translate-y-0.5"
+          class="scroll-reveal group flex items-start gap-4 p-6 rounded-xl bg-white/5 border border-white/10 hover:border-primary-400/30 transition-all duration-300 hover:-translate-y-0.5"
         >
-          <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-gold-500/10 to-gold-600/10 flex items-center justify-center text-gold-400 flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+          <div class="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center text-primary-400 flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
             <Fragment set:html={info.icon} />
           </div>
           <div>
             <div class="text-white/40 text-xs mb-1">{info.label}</div>
-            <div class="text-white/80 text-sm group-hover:text-gold-400 transition-colors">{info.value}</div>
+            <div class="text-white/80 text-sm group-hover:text-primary-400 transition-colors">{info.value}</div>
           </div>
         </a>
       ))}
@@ -55,7 +55,7 @@ const contactInfo = [
 
     <!-- Map placeholder -->
     <div class="scroll-reveal mt-12 max-w-4xl mx-auto">
-      <div class="rounded-xl overflow-hidden border border-white/[0.06] bg-white/[0.02] h-48 flex items-center justify-center">
+      <div class="rounded-xl overflow-hidden border border-white/10 bg-white/5 h-48 flex items-center justify-center">
         <div class="text-center">
           <svg class="w-8 h-8 text-white/20 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
@@ -69,12 +69,12 @@ const contactInfo = [
 </section>
 
 <!-- Footer -->
-<footer class="py-12 bg-navy-950 border-t border-white/5">
+<footer class="py-12 bg-surface-900 border-t border-white/10">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex flex-col md:flex-row items-center justify-between gap-6">
       <!-- Logo & name -->
       <div class="flex items-center gap-3">
-        <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-gold-400 to-gold-600 flex items-center justify-center font-bold text-navy-900 text-xs">
+        <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-primary-400 to-primary-600 flex items-center justify-center font-bold text-white text-xs">
           宏
         </div>
         <div>
@@ -84,16 +84,17 @@ const contactInfo = [
       </div>
 
       <!-- Links -->
-      <div class="flex items-center gap-6 text-white/30 text-xs">
-        <a href="#overview" class="hover:text-gold-400 transition-colors">集团概况</a>
-        <a href="#business" class="hover:text-gold-400 transition-colors">业务板块</a>
-        <a href="#subsidiaries" class="hover:text-gold-400 transition-colors">旗下公司</a>
-        <a href="#contact" class="hover:text-gold-400 transition-colors">联系我们</a>
+      <div class="flex items-center gap-6 text-white/40 text-xs">
+        <a href="/" class="hover:text-primary-400 transition-colors">首页</a>
+        <a href="/about" class="hover:text-primary-400 transition-colors">关于我们</a>
+        <a href="/news" class="hover:text-primary-400 transition-colors">新闻动态</a>
+        <a href="#business" class="hover:text-primary-400 transition-colors">业务板块</a>
+        <a href="#contact" class="hover:text-primary-400 transition-colors">联系我们</a>
       </div>
 
       <!-- Copyright -->
       <div class="text-white/20 text-xs">
-        © 2023-2025 湖北宏邦商务服务有限公司 版权所有
+        © 2023-2026 湖北宏邦商务服务有限公司 版权所有
       </div>
     </div>
   </div>
